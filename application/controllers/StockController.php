@@ -26,7 +26,7 @@ class StockController extends CI_Controller{
         $this->data['stocktable'] = $this->table->generate($rows);
         
         $this->data['pagebody'] = 'Stocks/StockView';
-        
+          
         
         $this->load->view('Stocks/StockView');
 //		$this->load->view('welcome_message');

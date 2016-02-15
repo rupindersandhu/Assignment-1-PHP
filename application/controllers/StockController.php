@@ -15,6 +15,17 @@ class StockController extends CI_Controller{
     //put your code here
     public function index()
 	{
+        $stocks = $this->Stocks->all();
+        
+        foreach($stocks as $stock) 
+        {
+            $stockarr[] = $this->parser->parse('Stocks/stock_table',(array)stock,true);
+        }
+        
+        $rows = $this->table->make_columns($stockarr[],1);
+        $this->data['stocktable'] = $this->table->generate($rows);
+        
+        $this->data['pagebody'] = 'Stocks/StockView';
 //		$this->load->view('welcome_message');
 //        $pix = $this->images->all();
 //        

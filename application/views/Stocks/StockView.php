@@ -1,6 +1,7 @@
-<html>
-    <head></head><body>
-        {stocktable}
+{stocktable}
+
+<br />
+<br />
+
+{movementtable}
 <h1>This is the Stock page</h1>
-    </body>
-</html>

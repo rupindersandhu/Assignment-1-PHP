@@ -2,9 +2,11 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 /**
- * Contacts table.
+ * Description of Movement
+ *
+ * @author a7823
  */
-class Stocks extends CI_Model {
+class Movement extends CI_Model {
     // Constructor
     function __construct()
     {
@@ -14,8 +16,8 @@ class Stocks extends CI_Model {
     // return all images desc order by post date
     function all()
     {
-        $this->db->order_by("Code", "asc");
-        $query = $this->db->get('stocks');
+        $this->db->order_by("Datetime", "asc");
+        $query = $this->db->get('movements');
         return $query->result_array();
     }
     
@@ -25,16 +27,13 @@ class Stocks extends CI_Model {
         $this->db->limit(1);
         $codes = $this->db->get('movements');
         $code = $codes->result_array()[0]['Code'];
-        $query = $this->db->query('Select * From stocks '
+        $query = $this->db->query('Select * From movements '
                 . 'Where Code = "'.$code.'"');
         return $query->result_array();
     }
     
-    function selected($code)
-    {
-        $query = $this->db->query('Select * from stocks Where Code = "'.$code.'"');
+    function selected($code) {
+        $query = $this->db->query('Select * from movements Where Code = "'.$code.'"');
         return $query->result_array();
     }
 }
-/* End of file Contacts.php */
-/* Location: application/models/Contacts.php */

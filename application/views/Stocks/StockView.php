@@ -1,3 +1,5 @@
+{pageselect}
+
 {stocktable}
 
 <br />

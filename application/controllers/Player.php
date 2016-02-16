@@ -43,6 +43,7 @@ class Player extends Application {
         public function portfolio($player)
         {
             $this->data['pagebody'] = 'player/portfolio';
+           
             $record = $this->players->get($player);
             
             $this->data = array_merge($this->data, $record);

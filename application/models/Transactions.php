@@ -4,32 +4,33 @@ if (!defined('BASEPATH'))
 /**
  * Contacts table.
  */
-class Players extends CI_Model {
+class Transactions extends CI_Model {
     // Constructor
     function __construct()
     {
 	parent::__construct();
-	//$this->setTable('contacts', 'ID');
     }
     
     // return all images desc order by post date
     function all()
     {
-        $this->db->order_by("Player", "asc");
-        $query = $this->db->get('players');
+        $this->db->order_by("DateTime", "asc");
+        $query = $this->db->get('transactions');
         return $query->result_array();
     }
     
-    	public function get($which)
-	{
+    public function get_all_by_player($which)
+    {
 
-            $sql = "SELECT * FROM players WHERE Player = ?"; 
+            $sql = "SELECT * FROM transactions WHERE Player = ?"; 
 
             $query = $this->db->query($sql, array($which));
-            $row = $query->row_array();
+            if($query->num_rows() > 0)
+                return $query->result_array();
+            
+            return null;
 
-            return $row;
-		//return null;
+		
 	}
     
     //return last 3 newest images

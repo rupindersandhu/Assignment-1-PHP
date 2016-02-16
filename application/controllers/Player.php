@@ -33,9 +33,9 @@ class Player extends Application {
             foreach ($players as $player_record)
                 $options[$player_record['Player']] =  $player_record['Player'];
 
-            $js = 'id="select_players" class="form-control" onchange="player_redirect()"'; 
+            $extra = 'id="select_players" class="form-control" onchange="player_redirect()"'; 
             
-            $select = form_dropdown('shirts', $options, $this->data['name'], $js);
+            $select = form_dropdown('select_players', $options, $this->data['name'], $extra);
             return $select;
         }
         

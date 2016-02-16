@@ -1,47 +1,33 @@
 <?php
-/**
- * core/MY_Controller.php
- *
- * Default application controller
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
-class Application extends CI_Controller {
-    protected $data = array();      // parameters for view components
-    protected $id;		  // identifier for our content
-    protected $choices = array(// our menu navbar
-	'Home' => '/',
-        'Gallery' => '/gallery',
-        'About' => '/about'        
-    );
-    /**
-     * Constructor.
-     * Establish view parameters & load common helpers
-     */
+
+/**
+ * Description of MY_Controller
+ *
+ * @author a7823
+ */
+class Application extends CI_Controller { 
+    protected $data = array();
+    
     function __construct()
     {
 	parent::__construct();
-        
 	$this->data = array();
-	$this->data['pagetitle'] = 'Game';
         $this->load->helper(array('common', 'url')); 
-       $this->load->library('parser');
-        
+	$this->data['pagetitle'] = 'PHP Assignment Group 7';
     }
-    /**
-     * Render this page
-     */
-    function render()
-    {
-        
-	$this->data['menubar'] = build_menu_bar($this->choices);
-
+    
+    function render() {
         $this->data['header'] = $this->load->view('_header','',true);
         $this->data['footer'] = $this->load->view('_footer','',true);
 	$this->data['content'] = $this->parser->parse($this->data['pagebody'], $this->data, true);
 	$this->data['data'] = &$this->data;
 	$this->parser->parse('_template', $this->data);
-        
-
     }
+    //put your code here
 }
-/* End of file MY_Controller.php */
-/* Location: application/core/MY_Controller.php */

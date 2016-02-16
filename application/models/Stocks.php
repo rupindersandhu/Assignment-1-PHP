@@ -35,6 +35,11 @@ class Stocks extends CI_Model {
         $query = $this->db->query('Select * from stocks Where Code = "'.$code.'"');
         return $query->result_array();
     }
+    
+    function codes() {
+        $query = $this->db->query("Select Code from stocks");
+        return $query->result_array();
+    }
 }
 /* End of file Contacts.php */
 /* Location: application/models/Contacts.php */

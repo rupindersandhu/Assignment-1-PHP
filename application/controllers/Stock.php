@@ -57,18 +57,16 @@ class Stock extends Application{
         $rows_movement = $this->table->make_columns($movementarr,1);
         $this->data['movementtable'] = $this->table->generate($rows_movement);
         
+        $this->data['pageselect'] = Self::populate_options();
         $this->data['pagebody'] = 'Stocks/StockView';
-        $this->render();
+        $this->render();    
     }
         
     function populate_options()
     {
-            $stocks = $this->Stocks->all();
-            foreach ($stocks as $stock_record)
-                $options[$stock_record['Code']] =  $stock_record['Code'];
-            $js = 'id="select_stocks" class="form-control" onchange="stock_redirect()"'; 
-            
-            $select = form_dropdown('shirts', $options, $this->data['name'], $js);
-            return $select;
+            $this->load->helper('form');
+            $entries = $this->Stocks->codes();
+            $finalDropDown = array_merge(array('' => 'Please Select'), $entries);
+            return form_dropdown('stock', $finalDropDown);
     }
 }

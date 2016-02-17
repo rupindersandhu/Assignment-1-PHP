@@ -1,3 +1,11 @@
+<script>
+    function stock_onclick() {
+        var url =document.getElementById("stocklist").value;
+        location.href = '/Stock/' + url;
+    }
+    
+</script>
+
 {pageselect}
 
 {stocktable}

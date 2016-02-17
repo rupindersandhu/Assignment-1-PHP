@@ -5,26 +5,7 @@ class Player extends Application {
 
 	public function index()
 	{
-          /*  $players = $this->players->all();
-            $stocks = $this->stocks->all();
-
-            foreach ($players as $player_record)
-                $players_rows[] = (array) $player_record;
             
-            foreach ($stocks as $stock_record)
-                $stocks_rows[] = (array) $stock_record;
-            
-            $player_parms['players'] = $players_rows;
-            $stock_parms['stocks'] = $stocks_rows;
-
-            
-            $this->data['pannel1'] = $this->parser->parse('pannel1',$player_parms, true);
-            $this->data['pannel2'] = $this->parser->parse('pannel2',$stock_parms, true);
-            
-            $this->data['pagebody'] = 'welcome';
-            $this->render();
-           * 
-           */
 	}
         
         public function populate_options()

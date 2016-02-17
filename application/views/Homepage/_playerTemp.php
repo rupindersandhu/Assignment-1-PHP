@@ -1,9 +1,0 @@
-    <tr>
-    {playertable}
-    <td>
-        <text>{Player}</text>
-    </td>
-    <td>
-        <text>{Cash}</text>
-    </td>
-    {/playertable}

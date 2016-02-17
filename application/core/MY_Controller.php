@@ -18,10 +18,13 @@ class Application extends CI_Controller {
     {
 	parent::__construct();
 	$this->data = array();
+        $this->load->helper(array('common', 'url')); 
 	$this->data['pagetitle'] = 'PHP Assignment Group 7';
     }
     
     function render() {
+       // $this->data['header'] = $this->load->view('_header','',true);
+        //$this->data['footer'] = $this->load->view('_footer','',true);
 	$this->data['content'] = $this->parser->parse($this->data['pagebody'], $this->data, true);
 	$this->data['data'] = &$this->data;
 	$this->parser->parse('_template', $this->data);

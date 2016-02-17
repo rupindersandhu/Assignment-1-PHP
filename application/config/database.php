@@ -9,7 +9,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 | For complete instructions please consult the 'Database Connection'
 | page of the User Guide.
-|
+|s
 | -------------------------------------------------------------------
 | EXPLANATION OF VARIABLES
 | -------------------------------------------------------------------
@@ -78,7 +78,7 @@ $db['default'] = array(
 	'hostname' => 'localhost',
 	'username' => 'root',
 	'password' => 'bitnami',
-	'database' => 'comp4711',
+	'database' => 'mysql',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => TRUE,

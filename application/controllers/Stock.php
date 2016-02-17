@@ -21,13 +21,13 @@ class Stock extends Application{
         
         if(sizeof($urls) < 2) 
         {
-            $movements = $this->Movement->newest();
-            $stocks = $this->Stocks->newest();
+            $movements = $this->movement->newest();
+            $stocks = $this->stocks->newest();
         } else
         {
             $code = $urls[1];
-            $movements = $this->Movement->selected($code);
-            $stocks = $this->Stocks->selected($code);
+            $movements = $this->movement->selected($code);
+            $stocks = $this->stocks->selected($code);
         }
         
         foreach($stocks as $stock) 
@@ -53,22 +53,27 @@ class Stock extends Application{
         );
         
         $this->table->set_template($parm);
-        
+            
         $rows_movement = $this->table->make_columns($movementarr,1);
         $this->data['movementtable'] = $this->table->generate($rows_movement);
         
-        $this->data['pagebody'] = 'Stocks/StockView';
-        $this->render();
+        $this->data['pageselect'] = Self::populate_options();
+        $this->data['pagebody'] = 'Stocks/stockview';
+        $this->render();    
     }
         
     function populate_options()
     {
-            $stocks = $this->Stocks->all();
-            foreach ($stocks as $stock_record)
-                $options[$stock_record['Code']] =  $stock_record['Code'];
-            $js = 'id="select_stocks" class="form-control" onchange="stock_redirect()"'; 
-            
-            $select = form_dropdown('shirts', $options, $this->data['name'], $js);
-            return $select;
+            $this->load->helper('form');
+            $entries = $this->stocks->codes();
+            $js = 'id="stocklist" onChange="stock_onclick();"';
+            $newArr = array();
+            $newArr[""] = "Please Select";
+            foreach($entries as $loopArr)
+            {
+                $temp = $loopArr['Code'];
+                $newArr[$temp] = $loopArr['Code'] ;
+            }
+            return form_dropdown('stock', $newArr,null,$js);
     }
 }

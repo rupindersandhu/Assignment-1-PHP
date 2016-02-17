@@ -53,7 +53,7 @@ class Stock extends Application{
         );
         
         $this->table->set_template($parm);
-        
+            
         $rows_movement = $this->table->make_columns($movementarr,1);
         $this->data['movementtable'] = $this->table->generate($rows_movement);
         
@@ -66,7 +66,14 @@ class Stock extends Application{
     {
             $this->load->helper('form');
             $entries = $this->Stocks->codes();
-            $finalDropDown = array_merge(array('' => 'Please Select'), $entries);
-            return form_dropdown('stock', $finalDropDown);
+            $js = 'id="stocklist" onChange="stock_onclick();"';
+            $newArr = array();
+            $newArr[""] = "Please Select";
+            foreach($entries as $loopArr)
+            {
+                $temp = $loopArr['Code'];
+                $newArr[$temp] = $loopArr['Code'] ;
+            }
+            return form_dropdown('stock', $newArr,null,$js);
     }
 }

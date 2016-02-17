@@ -19,8 +19,8 @@
   </head>
   
   <body>
-      {header}
+      
       {pagecontent}
-      {footer}
+      
   </body>
 </html>

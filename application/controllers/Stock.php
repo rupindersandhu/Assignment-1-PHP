@@ -21,13 +21,13 @@ class Stock extends Application{
         
         if(sizeof($urls) < 2) 
         {
-            $movements = $this->Movement->newest();
-            $stocks = $this->Stocks->newest();
+            $movements = $this->movement->newest();
+            $stocks = $this->stocks->newest();
         } else
         {
             $code = $urls[1];
-            $movements = $this->Movement->selected($code);
-            $stocks = $this->Stocks->selected($code);
+            $movements = $this->movement->selected($code);
+            $stocks = $this->stocks->selected($code);
         }
         
         foreach($stocks as $stock) 
@@ -58,14 +58,14 @@ class Stock extends Application{
         $this->data['movementtable'] = $this->table->generate($rows_movement);
         
         $this->data['pageselect'] = Self::populate_options();
-        $this->data['pagebody'] = 'Stocks/StockView';
+        $this->data['pagebody'] = 'Stocks/stockview';
         $this->render();    
     }
         
     function populate_options()
     {
             $this->load->helper('form');
-            $entries = $this->Stocks->codes();
+            $entries = $this->stocks->codes();
             $js = 'id="stocklist" onChange="stock_onclick();"';
             $newArr = array();
             $newArr[""] = "Please Select";

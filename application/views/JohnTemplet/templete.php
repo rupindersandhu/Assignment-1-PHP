@@ -7,9 +7,6 @@
 
     <title>{pagetitle}</title>
 
-    <meta name="description" content="Source code generated using layoutit.com">
-    <meta name="author" content="LayoutIt!">
-
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     
@@ -29,13 +26,13 @@
 					<ul class="nav navbar-nav">
                                            
 						<li class="active">
-							<a href="#">Home</a>
+							<a href="/">Home</a>
 						</li>
                                                 <li>
-							<a href="#">Player</a>
+							<a href="/player">Player</a>
 						</li>
 						<li>
-							<a href="#">StockInfo</a>
+							<a href="/Stock">StockInfo</a>
 						</li>
                                                 <li>
                                                     {login-menu}
@@ -45,10 +42,6 @@
 				</div>
 				
 			</nav>
-			
-			<div class = "container-fluid">
-				<img class = "img-rounded center-block" alt="Bootstrap Image Preview" src="http://lorempixel.com/140/140/">
-			</div>
 			
 			<div class="row">
 				<div class="col-md-6">

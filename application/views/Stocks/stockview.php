@@ -7,6 +7,8 @@
     
 </script>
 <!--The drop down menu-->
+<h1>This is the Stock page</h1>
+
 {pageselect}
 
 <!--The stock table -->
@@ -17,4 +19,4 @@
 
 <!--The stock movements table-->
 {movementtable}
-<h1>This is the Stock page</h1>
+

@@ -32,10 +32,10 @@
 							<a href="/player">Player</a>
 						</li>
 						<li>
-							<a href="/Stock">StockInfo</a>
+							<a href="/stock">Stock</a>
 						</li>
                                                 <li>
-                                                    {login-menu}
+                                                        <a href="/Login/{login-menu}">Login</a>
                                                 </li>
 					</ul>
 					

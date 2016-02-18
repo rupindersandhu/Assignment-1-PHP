@@ -11,12 +11,17 @@
 
 {pageselect}
 
-<!--The stock table -->
+
 {stocktable}
 
 <br />
 <br />
 
-<!--The stock movements table-->
 {movementtable}
+        
+       
+
+
+<!--The stock movements table-->
+
 

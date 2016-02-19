@@ -1,5 +1,10 @@
 <?php
-session_start();
+
+ if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+        
+    } 
 
 $userinfo = array(
                 'Henry'=>'1234',
@@ -9,6 +14,7 @@ $userinfo = array(
                 );
 
 if(isset($_GET['logout'])) {
+    
     $_SESSION['username'] = '';
     header('Location:  ' . $_SERVER['PHP_SELF']);
 }
@@ -66,7 +72,7 @@ if(isset($_POST['username'])) {
                                                     
                                                      <a href="/login">Login</a>
                                                 <li>
-                                                     <?php if($_SESSION['username']): ?>
+                                                     <?php if(isset($_POST['username']) && $_SESSION['username']): ?>
                                                           <a href="?logout=1">Logout</a>
                                                      <?php endif; ?>
                                                  </li>

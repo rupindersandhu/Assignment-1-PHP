@@ -9,7 +9,6 @@ class Players extends CI_Model {
     function __construct()
     {
 	parent::__construct();
-	//$this->setTable('contacts', 'ID');
     }
     
     // return all images desc order by post date
@@ -31,15 +30,8 @@ class Players extends CI_Model {
             return $row;
 		//return null;
 	}
-    
-    //return last 3 newest images
-   /* function newest()
-    {
-        $this->db->order_by("id", "desc");
-        $this->db->limit(3);
-        $query = $this->db->get('images');
-        return $query->result_array();
-    }*/
+        
+       
 }
 /* End of file Contacts.php */
 /* Location: application/models/Contacts.php */

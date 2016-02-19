@@ -7,7 +7,9 @@
             <th>
 		Cash
             </th>
-            
+            <th>
+		Equity
+            </th>
 	</tr>
     </thead>
 <tbody>
@@ -18,6 +20,9 @@
     <td>
         {Cash}
     </td>
+    <th>
+        {Equity}
+    </th>
 </tr>
     </tbody>
 </table>

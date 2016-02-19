@@ -35,7 +35,7 @@
 							<a href="/stock">Stock</a>
 						</li>
                                                 <li>
-                                                        <a href="/Login/{login-menu}">Login</a>
+                                                        <a href="/login">Login</a>
                                                 </li>
 					</ul>
 					
@@ -44,7 +44,7 @@
 			</nav>
 			
 			<div class="row">
-				<div class="col-md-6">
+				<div class="col-md-10 col-md-offset-1">
 				{content}
 			</div>
 		</div>

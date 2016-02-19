@@ -5,9 +5,9 @@ class Player extends Application {
 
 	public function index()
 	{  
-            $player = $this->session->userdata('name');
             
-	    $this->portfolio($player);
+            
+	    //$this->portfolio($player);
             
             $this->data['pagebody'] = 'player/portfolio';
             $record = $this->players->get("Donald");
@@ -48,7 +48,7 @@ class Player extends Application {
             $this->data = array_merge($this->data, $record);
             $this->data['name'] = $record['Player'];
             $this->data['cash'] = $record['Cash'];
-            $this->data['image'] = './data/'.$record['Player'].'.png';
+            $this->data['image'] = '/./data/'.$record['Player'].'.png';
 
             
             $transactions_parms['transactions'] = self::transaction_get_all_by_player($player);

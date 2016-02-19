@@ -1,4 +1,4 @@
-<center>
+
 <form method="post" action"">
     <div class="form-group">
 	<label for="field-username">Username</label>
@@ -10,4 +10,3 @@
     </div>
     <button type="submit" class="btn btn-default">Login</button>
 </form>
-</center>

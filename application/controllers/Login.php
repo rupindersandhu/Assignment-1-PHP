@@ -10,7 +10,6 @@ class Login extends Application
 {
     function index() 
     {
-       $this->load->library('session');
        $this->data['pagebody'] = 'Login/login';
        
 //       if($this->input->post('field-username')) {

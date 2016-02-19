@@ -1,3 +1,28 @@
+<?php
+session_start();
+
+$userinfo = array(
+                'Henry'=>'1234',
+                'Donald'=>'1234',
+                'Mickey'=>'1234',
+                'George'=>'1234'
+                );
+
+if(isset($_GET['logout'])) {
+    $_SESSION['username'] = '';
+    header('Location:  ' . $_SERVER['PHP_SELF']);
+}
+
+if(isset($_POST['username'])) {
+    if($userinfo[$_POST['username']] == $_POST['password']) {
+        $_SESSION['username'] = $_POST['username'];
+    }else {
+        //Invalid Login
+    }
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -13,6 +38,9 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/scripts.js"></script>
+    
+    
+    </script>
   </head>
 
   </head>
@@ -35,7 +63,13 @@
 							<a href="/stock">Stock</a>
 						</li>
                                                 <li>
-                                                        <a href="/login">Login</a>
+                                                    
+                                                     <a href="/login">Login</a>
+                                                <li>
+                                                     <?php if($_SESSION['username']): ?>
+                                                          <a href="?logout=1">Logout</a>
+                                                     <?php endif; ?>
+                                                 </li>
                                                 </li>
 					</ul>
 					

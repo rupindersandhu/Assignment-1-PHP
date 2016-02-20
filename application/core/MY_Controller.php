@@ -25,6 +25,7 @@ class Application extends CI_Controller {
     function render() {
        // $this->data['header'] = $this->load->view('_header','',true);
         //$this->data['footer'] = $this->load->view('_footer','',true);
+        
 	$this->data['content'] = $this->parser->parse($this->data['pagebody'], $this->data, true);
 	$this->data['data'] = &$this->data;
 	$this->parser->parse('_template', $this->data);
